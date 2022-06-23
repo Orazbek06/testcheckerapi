@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 @RestController
@@ -30,11 +27,11 @@ public class Controller {
         Tests tests1 = new Tests();
         TestList = new ArrayList<>();
         got = new HashSet<>();
-        FileInputStream inputStream;
+        InputStream inputStream;
         ClassPathResource resource = new ClassPathResource("/test.xlsx");
 
         try {
-            inputStream = new FileInputStream(resource.getFile());
+            inputStream = resource.getInputStream();
         } catch (FileNotFoundException e) {
             return null;
         }
