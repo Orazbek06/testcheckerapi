@@ -36,7 +36,7 @@ public class Controller {
         try {
             inputStream = new FileInputStream(resource.getFile());
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            return null;
         }
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
 
