@@ -31,6 +31,7 @@ public class Controller {
         InputStream inputStream;
         ClassPathResource resource;
         if(name.equals("ok"))resource = new ClassPathResource("/okresult.xlsx");
+        else if(name.equals("web"))resource = new ClassPathResource("/web.xlsx");
         else resource = new ClassPathResource("/test.xlsx");
         try {
             inputStream = resource.getInputStream();
@@ -75,6 +76,8 @@ public class Controller {
                 case _NONE:
                     test.setQuestion("");
                     break;
+                default:
+                    test.setQuestion(String.valueOf(i));
             }
 
 
