@@ -44,7 +44,7 @@ public class Controller {
         int count = sheet.getLastRowNum();
         count++;
 
-        if(count > 0)while (got.size()<30){
+        if(count > 0)while (got.size()<25){
             int x = random.nextInt(count);
             got.add(x);
         }
