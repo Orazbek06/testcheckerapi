@@ -19,12 +19,12 @@ import java.util.*;
 @RestController
 public class Controller {
 
-    ArrayList<Test> TestList;
-    Set<Integer> got;
+    static ArrayList<Test> TestList;
+    static Set<Integer> got;
     public static final Random random = new Random();
 
     @GetMapping("/{name}")
-    public Tests main(@PathVariable String name) throws IOException {
+    public static Tests main(@PathVariable String name) throws IOException {
         Tests tests1 = new Tests();
         TestList = new ArrayList<>();
         got = new HashSet<>();
@@ -32,6 +32,7 @@ public class Controller {
         ClassPathResource resource;
         if(name.equals("ok"))resource = new ClassPathResource("/okresult.xlsx");
         else if(name.equals("web"))resource = new ClassPathResource("/web.xlsx");
+        else if(name.equals("algo"))resource = new ClassPathResource("/algo.xlsx");
         else resource = new ClassPathResource("/test.xlsx");
         try {
             inputStream = resource.getInputStream();
