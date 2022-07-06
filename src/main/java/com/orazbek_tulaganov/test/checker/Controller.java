@@ -33,6 +33,7 @@ public class Controller {
         if(name.equals("ok"))resource = new ClassPathResource("/okresult.xlsx");
         else if(name.equals("web"))resource = new ClassPathResource("/web.xlsx");
         else if(name.equals("algo"))resource = new ClassPathResource("/algo.xlsx");
+        else if(name.equals("proginjinir"))resource = new ClassPathResource("/proginjinir.xlsx");
         else resource = new ClassPathResource("/test.xlsx");
         try {
             inputStream = resource.getInputStream();
